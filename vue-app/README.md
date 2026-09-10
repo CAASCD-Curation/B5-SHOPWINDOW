@@ -1,41 +1,41 @@
-# vue-app
+# Vue 应用
 
-This template should help get you started developing with Vue 3 in Vite.
+此模板可以帮助你快速开始使用 Vite 开发 Vue 3 应用。
 
-## Recommended IDE Setup
+## 推荐的 IDE 配置
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+[VS Code](https://code.visualstudio.com/) + [Vue（官方）](https://marketplace.visualstudio.com/items?itemName=Vue.volar)（并禁用 Vetur）。
 
-## Recommended Browser Setup
+## 推荐的浏览器配置
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- 基于 Chromium 的浏览器（Chrome、Edge、Brave 等）：
+  - [Vue.js 开发者工具](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+  - [在 Chrome DevTools 中启用自定义对象格式化程序](http://bit.ly/object-formatters)
+- Firefox：
+  - [Vue.js 开发者工具](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+  - [在 Firefox DevTools 中启用自定义对象格式化程序](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
 
-## Type Support for `.vue` Imports in TS
+## TS 中 `.vue` 导入的类型支持
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+TypeScript 默认无法处理 `.vue` 导入的类型信息，因此我们使用 `vue-tsc` 替代 `tsc` CLI 进行类型检查。在编辑器中，需要安装 [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)，让 TypeScript 语言服务识别 `.vue` 类型。
 
-## Customize configuration
+## 自定义配置
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+请参阅 [Vite 配置参考](https://vite.dev/config/)。
 
-## Project Setup
+## 项目设置
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 编译并启动开发环境热更新
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### 类型检查、编译并压缩生产版本
 
 ```sh
 npm run build
