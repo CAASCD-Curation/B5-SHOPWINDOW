@@ -1,13 +1,178 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>橱窗档案 · Window Archive</title>
-    <link rel="stylesheet" href="/fonts/fonts.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>窗 · WINDOWSHOP — 橱窗陈列馆</title>
+  <meta name="description" content="橱窗主题策展档案：176 个关于观看、欲望与玻璃的条目。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 顶部固定导航 -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#/" data-scroll="hero">
+      <span class="nav__brand-cn">窗</span>
+      <span class="nav__brand-en">WINDOWSHOP</span>
+    </a>
+    <nav class="nav__links" aria-label="章节导航">
+      <a href="#/" data-scroll="hero"><i>01</i>雾气</a>
+      <a href="#/" data-scroll="corridor"><i>02</i>长廊</a>
+      <a href="#/" data-scroll="shelf"><i>03</i>索引</a>
+      <a href="#/" data-scroll="archive"><i>04</i>档案</a>
+      <a href="#/" data-scroll="about"><i>05</i>关于</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 01 HERO · 雾气玻璃 -->
+    <section class="hero" id="hero">
+      <img class="hero__bg" src="assets/images/w101.webp" alt="Le Bon Marché 百货商店橱窗" fetchpriority="high" />
+      <canvas class="hero__fog" id="fog" aria-hidden="true"></canvas>
+      <div class="hero__copy">
+        <p class="hero__kicker mono">橱窗陈列馆 · VITRINE ARCHIVE · 观看的考古学</p>
+        <h1 class="hero__title hero__title--en">
+          <span class="hero__title-line">WINDOW</span>
+          <span class="hero__title-line hero__title-line--indent">SHOP</span>
+        </h1>
+        <p class="hero__hint mono">↝ 擦拭玻璃，看见橱窗</p>
+      </div>
+      <p class="hero__index mono">01 / FOG — 雾气</p>
+    </section>
+
+    <!-- 跑马灯 -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>橱窗是欲望的剧场 — THE WINDOW IS A THEATRE OF DESIRE — 观看即占有 — TO LOOK IS TO POSSESS —&nbsp;</span><span>橱窗是欲望的剧场 — THE WINDOW IS A THEATRE OF DESIRE — 观看即占有 — TO LOOK IS TO POSSESS —&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- 02 长廊 -->
+    <section class="corridor" id="corridor">
+      <header class="section-head">
+        <h2 class="section-head__title">02 长廊 <span class="mono">· THE CORRIDOR</span></h2>
+        <p class="section-head__note mono">图片持续流动，点击进入档案</p>
+      </header>
+      <div class="corridor__stage" id="corridor-stage">
+        <div class="corridor__rail corridor__rail--fl"></div>
+        <div class="corridor__rail corridor__rail--fr"></div>
+        <div class="corridor__rail corridor__rail--cl"></div>
+        <div class="corridor__rail corridor__rail--cr"></div>
+        <!-- 画框由 corridor.js 生成 -->
+      </div>
+    </section>
+
+    <!-- 跑马灯 -->
+    <div class="marquee marquee--ink" aria-hidden="true">
+      <div class="marquee__track marquee__track--slow">
+        <span>玻璃既是引诱又是拒绝 — GLASS INVITES AND REFUSES — 透明的墙 — THE TRANSPARENT WALL —&nbsp;</span><span>玻璃既是引诱又是拒绝 — GLASS INVITES AND REFUSES — 透明的墙 — THE TRANSPARENT WALL —&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- 03 索引 · 竖向色块货架 -->
+    <section class="shelf" id="shelf">
+      <header class="section-head">
+        <h2 class="section-head__title">03 索引 <span class="mono">· THE INDEX</span></h2>
+        <p class="section-head__note mono">八个类别，悬停抽出，点击筛选档案</p>
+      </header>
+      <div class="shelf__row" id="shelf-row"><!-- 竖条由 shelf.js 生成 --></div>
+      <div class="shelf__baseline" aria-hidden="true"></div>
+    </section>
+
+    <!-- 04 档案 -->
+    <section class="archive" id="archive">
+      <header class="section-head">
+        <h2 class="section-head__title">04 档案 <span class="mono">· THE WORKS</span></h2>
+        <p class="section-head__note mono" id="archive-count">176 条目</p>
+      </header>
+      <div class="archive__filters mono" id="filters">
+        <span class="archive__filters-label">sort-by</span>
+        <!-- 筛选按钮由 archive.js 生成 -->
+      </div>
+      <div class="archive__grid" id="grid"><!-- 卡片由 archive.js 生成 --></div>
+    </section>
+
+    <!-- 跑马灯 -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>橱窗是欲望的剧场 — THE WINDOW IS A THEATRE OF DESIRE — 观看即占有 — TO LOOK IS TO POSSESS —&nbsp;</span><span>橱窗是欲望的剧场 — THE WINDOW IS A THEATRE OF DESIRE — 观看即占有 — TO LOOK IS TO POSSESS —&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- 05 关于 -->
+    <section class="about" id="about">
+      <header class="section-head">
+        <h2 class="section-head__title">05 关于 <span class="mono">· ABOUT</span></h2>
+      </header>
+      <p class="about__statement">
+        橱窗是现代观看的原型场景：<em>一块玻璃，隔开了街道与欲望。</em>
+        它把商品变成景观，把路人变成观众；玻璃既是引诱，又是拒绝——你看得见，却摸不着。
+        本档案汇集 <strong>176</strong> 个条目：从古典绘画到百货公司，从文学意象到城市街角，
+        试图为「观看」这件事，做一次小小的考古。
+      </p>
+      <blockquote class="about__quote">
+        <p>「橱窗既是引诱，又是拒绝。」</p>
+        <cite class="mono">— 瓦尔特·本雅明《拱廊计划》</cite>
+      </blockquote>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer__cols">
+      <div class="footer__col">
+        <h3 class="mono">ARCHIVE</h3>
+        <p>176 条目<br />166 图像<br />8 类别</p>
+      </div>
+      <div class="footer__col">
+        <h3 class="mono">SECTIONS</h3>
+        <p>A 经典艺术档案 55<br />B 文学意象 43<br />C 社会素材 50<br />D 形式灵感 28</p>
+      </div>
+      <div class="footer__col">
+        <h3 class="mono">COLOPHON</h3>
+        <p>内容与策展课程 · 2026<br />窗 · VITRINE 策展档案<br />HTML / CSS / JS / Canvas</p>
+      </div>
+    </div>
+    <div class="footer__base mono">
+      <span>窗 · VITRINE — 橱窗陈列馆</span>
+      <span>ALL RIGHTS RESERVED</span>
+    </div>
+  </footer>
+
+  <!-- 详情覆盖层（hash 路由） -->
+  <div class="detail" id="detail" hidden>
+    <div class="detail__bar">
+      <button class="detail__back mono" type="button" id="detail-back">← 返回</button>
+      <span class="detail__idx mono" id="detail-idx"></span>
+    </div>
+    <div class="detail__body">
+      <figure class="detail__media" id="detail-media"></figure>
+      <div class="detail__info">
+        <p class="detail__cat mono" id="detail-cat"></p>
+        <h2 class="detail__name" id="detail-name"></h2>
+        <dl class="detail__meta mono" id="detail-meta"></dl>
+        <div class="detail__block">
+          <h3 class="mono">描述 · DESCRIPTION</h3>
+          <p id="detail-desc"></p>
+        </div>
+        <div class="detail__block">
+          <h3 class="mono">意义 · MEANING</h3>
+          <p id="detail-meaning"></p>
+        </div>
+        <blockquote class="detail__orig" id="detail-orig" hidden>
+          <h3 class="mono">原文 · ORIGINAL</h3>
+          <p id="detail-orig-text"></p>
+        </blockquote>
+        <ul class="detail__kw" id="detail-kw"></ul>
+        <nav class="detail__pn mono">
+          <button type="button" id="detail-prev">← 上一个</button>
+          <button type="button" id="detail-next">下一个 →</button>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
 </html>
