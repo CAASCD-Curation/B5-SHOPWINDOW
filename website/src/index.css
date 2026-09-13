@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Archivo", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: #ffe600;
+    color: #111;
+  }
+}
+
+/* ---------- freakmag style helpers ---------- */
+
+.font-display {
+  font-family: "Anton", "Archivo", "Noto Sans SC", sans-serif;
+  letter-spacing: 0.01em;
+}
+/* same families, lighter weight for the overview index */
+.font-display-md {
+  font-family: "Archivo", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.font-serif-sc {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+}
+
+/* vertical CJK text like freakmag rails */
+.v-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* ---------- keyframes ---------- */
+
+@keyframes fm-rise {
+  from {
+    opacity: 0;
+    transform: translateY(70vh) rotate(var(--rise-rot, 0deg)) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--rest-rot, 0deg)) scale(1);
+  }
+}
+
+@keyframes fm-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fm-img-in {
+  0% {
+    opacity: 0;
+    transform: rotate(calc(var(--img-rot, -6deg) - 10deg)) scale(0.7) translateY(40px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(var(--img-rot, -6deg)) scale(1) translateY(0);
+  }
+}
+
+@keyframes fm-pop {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--pop-rot, -8deg)) scale(0);
+  }
+  70% {
+    opacity: 1;
+    transform: rotate(var(--pop-rot, -8deg)) scale(1.12);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(var(--pop-rot, -8deg)) scale(1);
+  }
+}
+
+@keyframes fm-float {
+  0%,
+  100% {
+    transform: rotate(var(--img-rot, -6deg)) translateY(0);
+  }
+  50% {
+    transform: rotate(calc(var(--img-rot, -6deg) + 1.5deg)) translateY(-10px);
+  }
+}
+
+@keyframes fm-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fm-ticker-bounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(4deg);
+  }
+}
+
+@keyframes fm-wipe-in {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fm-logo-wiggle {
+  0%,
+  100% {
+    transform: rotate(-2deg) scale(1);
+  }
+  50% {
+    transform: rotate(2deg) scale(1.04);
+  }
+}
+
+/* ---------- animation utility classes ---------- */
+
+.anim-rise {
+  opacity: 0;
+  animation: fm-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.anim-fade-up {
+  opacity: 0;
+  animation: fm-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.anim-img-in {
+  opacity: 0;
+  animation: fm-img-in 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.anim-pop {
+  opacity: 0;
+  animation: fm-pop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.anim-float {
+  animation: fm-float 5s ease-in-out infinite;
+}
+.anim-marquee {
+  animation: fm-marquee var(--marquee-dur, 28s) linear infinite;
+}
+.anim-wipe {
+  transform-origin: top;
+  animation: fm-wipe-in 0.45s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+.anim-wipe-out {
+  transform-origin: bottom;
+  animation: fm-wipe-in 0.45s cubic-bezier(0.7, 0, 0.3, 1) reverse forwards;
+}
+.anim-logo {
+  display: inline-block;
+  animation: fm-logo-wiggle 3s ease-in-out infinite;
+}
+
+/* hover: photo straightens like freakmag article pages */
+.fm-photo {
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.55s ease;
+  transform: rotate(var(--img-rot, -6deg));
+  box-shadow: 10px 14px 0 rgba(0, 0, 0, 0.18);
+  will-change: transform;
+}
+.fm-photo:hover {
+  transform: rotate(0deg) scale(1.04);
+  box-shadow: 14px 20px 0 rgba(0, 0, 0, 0.22);
+}
+
+/* index column */
+.fm-col {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
+  will-change: transform;
+}
+.fm-col-img {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+}
+
+/* scroll hide scrollbar but keep scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.fm-ease {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* hairline strokes (≤0.25pt 视觉效果) */
+.fm-hair {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+}
+.fm-hair-c {
+  border-color: rgba(0, 0, 0, 0.6);
+}
+.fm-hair-b {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+}
+.fm-hair-r {
+  border-right: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+/* underline link style in freakmag captions */
+.fm-underline {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  text-decoration-color: currentColor;
+}
+
+/* halftone-ish noise overlay optional */
+.fm-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: radial-gradient(#000 1px, transparent 1px);
+  background-size: 5px 5px;
+}
