@@ -1,0 +1,9 @@
+{
+  "name": "window-archive-static",
+  "private": true,
+  "version": "1.0.0",
+  "description": "橱窗档案 · Window Archive —— 纯静态策展档案网站",
+  "scripts": {
+    "dev": "node serve.js"
+  }
+}
